@@ -84,6 +84,15 @@
         font-size: 2rem !important;
       }
     }
+    @media (min-width: 400px) {
+      #puzzle{
+        max-width: 400px;
+      }
+
+      button{
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 
@@ -103,11 +112,15 @@
 
   <div id="moves">Moves: 0</div>
   <div id="status"></div>
+  <div id="walletInfo">🔌 Not connected</div>
 
   <!-- External JS -->
   <script src="puzzle.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
   <script src="payment.js"></script>
+  <script src="https://unpkg.com/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
+  <script src="https://unpkg.com/web3modal"></script>
+  <script src="walletconnect.js"></script>
 </body>
 
 </html>
