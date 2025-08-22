@@ -1,9 +1,9 @@
-const tweetURL = "https://x.com/anakincoco/status/1955186780837171344";
+const tweetURL = "https://x.com/anakincoco/status/1958900306731032588";
 
 function retweetToUnlock() {
   // Open Twitter retweet intent
   window.open(
-    `https://twitter.com/intent/retweet?tweet_id=1955186780837171344`,
+    `https://twitter.com/intent/retweet?tweet_id=1958900306731032588`,
     "_blank"
   );
 
