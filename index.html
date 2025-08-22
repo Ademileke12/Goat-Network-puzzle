@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>GOAT NETWORK Puzzle</title>
@@ -12,19 +13,22 @@
       margin: 0;
       padding: 0;
     }
+
     h1 {
       margin: 15px;
       font-size: 1.5rem;
     }
+
     #puzzle {
       display: grid;
-      margin: 20px auto;
+      margin: 10px auto;
       border: 2px solid #111;
-      width: 90vw;
-      max-width: 400px;
+      width: 95vw;
+      max-width: 600px;
       aspect-ratio: 1 / 1;
       touch-action: manipulation;
     }
+
     .tile {
       background-image: url("puzzle.png");
       background-repeat: no-repeat;
@@ -32,6 +36,7 @@
       cursor: pointer;
       transition: transform 0.2s;
     }
+
     .empty {
       background: #efefef !important;
       background-image: none !important;
@@ -41,7 +46,7 @@
     #controls {
       margin-top: 10px;
     }
-    
+
     button {
       margin: 5px;
       padding: 10px 16px;
@@ -53,19 +58,35 @@
       font-size: 1rem;
       cursor: pointer;
     }
+
     button:active {
       background: orange;
     }
-    #moves, #status {
+
+    #moves,
+    #status {
       margin-top: 10px;
       font-size: 1.1rem;
     }
+
     #status {
       font-weight: bold;
       color: green;
     }
+
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
+
 <body>
   <h1>GOAT NETWORK Puzzle</h1>
   <img src="puzzle.png" width="100px" alt="" class="gg">
@@ -88,4 +109,5 @@
   <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
   <script src="payment.js"></script>
 </body>
+
 </html>
