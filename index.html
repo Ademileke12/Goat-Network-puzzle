@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GOAT NETWORK Puzzle</title>
+  <style>
+    body {
+      background: #fafafa;
+      color: #111;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      margin: 15px;
+      font-size: 1.5rem;
+    }
+    #puzzle {
+      display: grid;
+      margin: 20px auto;
+      border: 2px solid #111;
+      width: 90vw;
+      max-width: 400px;
+      aspect-ratio: 1 / 1;
+      touch-action: manipulation;
+    }
+    .tile {
+      background-image: url("puzzle.png");
+      background-repeat: no-repeat;
+      border: 1px solid #222;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .empty {
+      background: #efefef !important;
+      background-image: none !important;
+      cursor: default;
+    }
+
+    #controls {
+      margin-top: 10px;
+    }
+    
+    button {
+      margin: 5px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      background: gold;
+      color: #111;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:active {
+      background: orange;
+    }
+    #moves, #status {
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+    #status {
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>GOAT NETWORK Puzzle</h1>
+  <img src="puzzle.png" width="100px" alt="" class="gg">
+  <div id="puzzle"></div>
+
+  <div id="controls">
+    <button onclick="initPuzzle(3)">Easy</button>
+    <button onclick="initPuzzle(4)">Medium</button>
+    <button onclick="initPuzzle(5)">Hard</button>
+    <button onclick="shuffle()">Shuffle</button>
+    <button id="solutionBtn" onclick="handleSolutionClick()">Pay $1 to Unlock Solution</button>
+    <button onclick="connectWallet()">Connect Wallet</button>
+  </div>
+
+  <div id="moves">Moves: 0</div>
+  <div id="status"></div>
+
+  <!-- External JS -->
+  <script src="puzzle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="payment.js"></script>
+</body>
+</html>
