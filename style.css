@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  #puzzzle{
+    min-width: 400px !important;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 1rem !important;
+  }
+}
+
