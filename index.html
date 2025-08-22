@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>GOAT NETWORK Puzzle</title>
   <style>
@@ -13,6 +14,15 @@
       text-align: center;
       margin: 0;
       padding: 0;
+    }
+
+    body {
+      background:#fff;
+      color: black;
+    }
+
+    #puzzle {
+      box-shadow: 0 0 25px rgb(204, 204, 200);
     }
 
     h1 {
@@ -26,6 +36,7 @@
       border: 2px solid #111;
       width: 95vw;
       max-width: 2000px;
+      /* Default = mobile */
       aspect-ratio: 1 / 1;
       touch-action: manipulation;
     }
@@ -45,19 +56,23 @@
     }
 
     #controls {
-      margin-top: 10px;
+      margin-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
 
     button {
-      margin: 5px;
-      padding: 14px 20px;
+      padding: 16px 24px;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       background: gold;
       color: #111;
       font-weight: bold;
-      font-size: 2rem;
+      font-size: 1.4rem;
       cursor: pointer;
+      min-width: 150px;
     }
 
     button:active {
@@ -66,8 +81,8 @@
 
     #moves,
     #status {
-      margin-top: 10px;
-      font-size: 1.1rem;
+      margin-top: 12px;
+      font-size: 1.2rem;
     }
 
     #status {
@@ -75,19 +90,21 @@
       color: green;
     }
 
-
+    /* Desktop screens (≥ 600px) */
     @media (min-width: 600px) {
       h1 {
         font-size: 1.8rem;
       }
 
-      #puzzzle {
-        max-width: 200px !important;
+      #puzzle {
+        max-width: 400px !important;
+        /* Smaller puzzle on PC */
       }
 
       button {
-        padding: 8px 12px;
+        padding: 10px 16px;
         font-size: 1rem !important;
+        min-width: 120px;
       }
     }
   </style>
@@ -96,11 +113,7 @@
 <body>
   <h1>GOAT NETWORK Puzzle</h1>
   <img src="puzzle.png" width="100px" alt="" class="gg">
-  <div id="walletControls">
-  <button id="connectBtn" onclick="connectWallet()">Connect Wallet</button>
-  <button id="disconnectBtn" onclick="disconnectWallet()" style="display:none;">Disconnect</button>
-</div>
-<div id="walletInfo">🔴 Not Connected</div>
+
   <div id="puzzle"></div>
 
   <div id="controls">
@@ -108,7 +121,7 @@
     <button onclick="initPuzzle(4)">Medium</button>
     <button onclick="initPuzzle(5)">Hard</button>
     <button onclick="shuffle()">Shuffle</button>
-    <button id="solutionBtn" onclick="handleSolutionClick()">Pay $1 to Unlock Solution</button>
+    <button id="solutionBtn" onclick="retweetToUnlock()">🔁 Retweet to Unlock Solution</button>
   </div>
 
   <div id="moves">Moves: 0</div>
@@ -116,18 +129,7 @@
 
   <!-- External JS -->
   <script src="puzzle.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.7.8/dist/umd/index.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/web3@1.8.2/dist/web3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/web3@1.8.2/dist/web3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/web3modal@1.9.12/dist/index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.7.8/dist/umd/index.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@coinbase/wallet-sdk@3.7.1/dist/CoinbaseWalletSDK.min.js"></script>
-
-  <script src="payment.js"></script>
-  <script src="https://unpkg.com/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
-  <script src="https://unpkg.com/web3modal"></script>
-  <script src="walletconnect.js"></script>
+  <script src="rt.js"></script>
 </body>
 
 </html>
